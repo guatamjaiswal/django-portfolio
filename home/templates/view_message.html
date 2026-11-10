@@ -1,0 +1,240 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>View Contact Message</title>
+
+<style>
+    .status-dropdown {
+    width: 100%;
+    padding: 11px;
+    margin-bottom: 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    background: white;
+    color: #334155;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.update-button {
+    display: inline-block;
+    padding: 12px 22px;
+    background-color: #3b82f6;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.25s ease;
+}
+
+.update-button:hover {
+    background-color: #1d4ed8;
+}
+
+.update-button:active {
+    background-color: #3b82f6;
+}
+
+@media (max-width: 480px) {
+    .update-button {
+        width: 100%;
+    }
+}
+
+    body {
+        font-family: Arial, sans-serif;
+        background: #f1f5f9;
+        margin: 0;
+        padding: 30px 15px;
+    }
+
+    .message-card {
+        max-width: 650px;
+        margin: 40px auto;
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        color: #2563eb;
+        margin-top: 0;
+    }
+
+    .detail {
+        margin: 20px 0;
+        padding: 15px;
+        background: #f8fafc;
+        border-radius: 8px;
+    }
+
+    .label {
+        font-weight: bold;
+        color: #334155;
+        margin-bottom: 8px;
+    }
+
+    .value {
+        color: #475569;
+        overflow-wrap: anywhere;
+    }
+
+    .message-text {
+        white-space: pre-wrap;
+        line-height: 1.6;
+    }
+
+    .back-button {
+       display: inline-block;
+       padding: 12px 22px;
+       background-color: #3b82f6;
+       color: white;
+       text-decoration: none;
+       font-size: 15px;
+       font-weight: 600;
+       border: none;
+       border-radius: 8px;
+       cursor: pointer;
+     transition: background-color 0.25s ease;
+    }
+
+    .back-button:hover {
+       background-color: #1d4ed8;
+    }
+
+   .back-button:active {
+      background-color: #3b82f6;
+    }
+
+   .back-button:focus {
+      outline: none;
+    }
+
+    @media (max-width: 480px) {
+      .back-button {
+         display: block;
+        text-align: center;
+    }
+}
+
+</style>
+
+</head><body><div class="message-card">
+
+    <h1>Contact Message</h1>
+
+    <div class="detail">
+        <div class="label">Name</div>
+        <div class="value">{{ contact.name }}</div>
+    </div>
+
+    <div class="detail">
+        <div class="label">Email</div>
+        <div class="value">{{ contact.email }}</div>
+    </div>
+
+    <div class="detail">
+        <div class="label">Full Message</div>
+        <div class="value message-text">{{ contact.message }}</div>
+    </div>
+
+    <div class="detail">
+        <div class="label">Received On</div>
+        <div class="value">{{ contact.created_at|date:"d M Y, h:i A" }}</div>
+    </div>
+    
+    <div class="detail">
+    <div class="label">Contact Status</div>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <select name="status" class="status-dropdown">
+            <option value="new" {% if contact.status == 'new' %}selected{% endif %}>
+                New
+            </option>
+
+            <option value="read" {% if contact.status == 'read' %}selected{% endif %}>
+                Read
+            </option>
+
+            <option value="replied" {% if contact.status == 'replied' %}selected{% endif %}>
+                Replied
+            </option>
+        </select>
+
+        <button type="submit" class="update-button">
+            Update Status
+        </button>
+    </form>
+    </div> 
+
+    <a href="{% url 'dashboard' %}" class="back-button">
+        ← Back to Dashboard
+    </a>
+
+</div>
+
+</body>
+</html>
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

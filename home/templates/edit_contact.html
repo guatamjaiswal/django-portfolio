@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Contact</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eaf1f8;
+            margin: 0;
+            padding: 30px 15px;
+        }
+
+        .edit-card {
+            max-width: 600px;
+            margin: 30px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #174ea6;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #bbb;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+
+        textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        button, .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 18px;
+            background-color: #2878d0;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        button:hover, .back-button:hover {
+            background-color: #174ea6;
+        }
+
+        .errorlist {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="edit-card">
+        <h1>Edit Contact</h1>
+
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <button type="submit">Save Changes</button>
+            <a href="{% url 'dashboard' %}" class="back-button">
+                Back to Dashboard
+            </a>
+        </form>
+    </div>
+</body>
+</html>

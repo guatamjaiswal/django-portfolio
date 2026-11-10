@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me | Gautam</title>
+    <link rel="stylesheet" href="{% static 'home/style.css' %}">
+</head>
+
+<body class="contact-page">
+
+    <nav class="main-nav">
+        <a href="/" class="nav-logo">Gautam<span>.</span></a>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/about/">About Me</a>
+            <a href="/contact/">Contact Me</a>
+            <a href="/dashboard/">Dashboard</a>
+        </div>
+    </nav>
+
+    <main class="contact-main">
+
+        <section class="contact-hero">
+            <p class="contact-tag">LET'S CONNECT</p>
+
+            <h1>Contact <span>Me</span></h1>
+
+            <p class="contact-intro">
+                Have a question, an opportunity, or an idea to discuss?
+                Send me a message. I'd be happy to connect with you.
+            </p>
+        </section>
+
+        <section class="contact-card">
+
+            {% if success %}
+                <p id="success-message" class="success-message">
+                    {{ success }}
+                </p>
+            {% endif %}
+
+            <h2>Send Me a Message</h2>
+            <p class="contact-subtitle">
+                Fill in the details below and I'll be glad to hear from you.
+            </p>
+
+            <form method="POST">
+                {% csrf_token %}
+
+                {{ form.as_p }}
+
+                <div class="contact-actions">
+                    <button type="submit" class="send-button">
+                        Send Message
+                    </button>
+
+                    <button
+                        type="reset"
+                        class="clear-button"
+                        onclick="document.getElementById('success-message')?.remove()"
+                    >
+                        Clear Form
+                    </button>
+                </div>
+            </form>
+
+        </section>
+
+    </main>
+
+    <footer class="contact-footer">
+        <p>© 2026 Gautam | Developer Portfolio</p>
+    </footer>
+
+</body>
+</html>
+
+

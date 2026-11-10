@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | Gautam</title>
+    <link rel="stylesheet" href="{% static 'home/style.css' %}">
+</head>
+
+<body class="about-page">
+
+    <nav class="main-nav">
+        <a href="/" class="nav-logo">Gautam<span>.</span></a>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/about/">About Me</a>
+            <a href="/contact/">Contact Me</a>
+            <a href="/dashboard/">Dashboard</a>
+        </div>
+    </nav>
+
+    <main class="about-main">
+
+        <section class="about-hero">
+            <p class="section-tag">GET TO KNOW ME</p>
+
+            <h1>About <span>Me</span></h1>
+
+            <p class="about-intro">
+                Hello! I'm Gautam, a B.Com graduate from Jabalpur
+                who is learning Full Stack Python development with Django.
+                I enjoy learning new technologies and building useful
+                web applications.
+            </p>
+        </section>
+
+        <section class="about-details">
+
+            <div class="about-info-card">
+                <h2>My Journey</h2>
+                <p>
+                    My journey into web development is driven by my
+                    curiosity and interest in technology. I am building
+                    my skills step by step through practical projects
+                    and hands-on learning.
+                </p>
+            </div>
+
+            <div class="about-info-card">
+                <h2>Technical Skills</h2>
+                <div class="about-skills">
+                    <span>Python</span>
+                    <span>Django</span>
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>SQL</span>
+                </div>
+            </div>
+
+            <div class="about-info-card">
+                <h2>My Goal</h2>
+                <p>
+                    My goal is to grow as a developer, strengthen my
+                    problem-solving skills, and build reliable web
+                    applications through continuous learning and practice.
+                </p>
+            </div>
+
+        </section>
+
+        <section class="about-cta">
+            <h2>Let's Connect!</h2>
+            <p>Have an opportunity or idea to discuss? Feel free to contact me.</p>
+
+            <a href="/contact/" class="primary-button">
+                Contact Me
+            </a>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 Gautam | Developer Portfolio</p>
+    </footer>
+
+</body>
+</html>

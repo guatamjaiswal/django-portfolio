@@ -1,0 +1,180 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gautam | Developer Portfolio</title>
+
+    <link rel="stylesheet" href="{% static 'home/style.css' %}">
+</head>
+
+<body class="home-page">
+
+    <nav class="main-nav">
+        <a href="/" class="nav-logo">Gautam<span>.</span></a>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/about/">About Me</a>
+            <a href="/contact/">Contact Me</a>
+            <a href="/dashboard/">Dashboard</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero-section">
+
+            <div class="hero-content">
+                <p class="hero-tag">WELCOME TO MY PROTFOLIO</p>
+
+                <h1>
+                    Hi, I'm <span>Gautam</span>
+                </h1>
+
+                <h2>Full Stack Python Developer in Training</h2>
+
+                <p class="hero-description">
+                    I am a B.Com graduate learning Full Stack Python
+                    development with Django. I enjoy learning new
+                    technologies and building useful web applications.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="/about/" class="primary-button">
+                        About Me
+                    </a>
+
+                    <a href="/contact/" class="secondary-button">
+                        Contact Me
+                    </a>
+                </div>
+
+                <p class="learning-note">
+                    Always learning. Always improving.
+                </p>
+            </div>
+
+            <div class="hero-image">
+                <img
+                    src="{% static 'home/images/profile.jpg' %}"
+                    alt="Gautam's profile photo"
+                    class="profile-photo"
+                >
+            </div>
+
+        </section>
+
+        <section class="skills-section">
+            <p class="section-tag">MY LEARNING JOURNEY</p>
+
+            <h2>Technologies I'm Learning</h2>
+
+            <div class="skills-container">
+                <div class="skill-card">Python</div>
+                <div class="skill-card">Django</div>
+                <div class="skill-card">HTML</div>
+                <div class="skill-card">CSS</div>
+                <div class="skill-card">JavaScript</div>
+                <div class="skill-card">SQL</div>
+            </div>
+        </section>
+             <!-- My Projects Section -->
+    <section class="projects-section">
+    <p class="section-tag">MY WORK</p>
+
+    <h2>My Development Projects</h2>
+
+    <p class="projects-description">
+        Here are some of the projects I am working on
+        while learning Full Stack Python development.
+    </p>
+
+    <div class="projects-container">
+
+        <div class="project-card">
+            <h3>Contact Management Dashboard</h3>
+
+            <p>
+                A Django-based web application to manage contact
+                messages, search records, update message status,
+                and edit or delete contact entries.
+            </p>
+
+            <div class="project-tech">
+                Python · Django · HTML · CSS · SQLite
+            </div>
+
+            <span class="project-status">
+                Learning Project
+            </span>
+        </div>
+
+        <div class="project-card">
+            <h3>Developer Portfolio Website</h3>
+
+            <p>
+                A personal portfolio website showcasing my
+                introduction, technical skills, and web development
+                learning journey.
+            </p>
+
+            <div class="project-tech">
+                HTML · CSS · Python · Django
+            </div>
+
+            <span class="project-status">
+                completed
+            </span>
+        </div>
+
+    </div>
+</section>   
+
+        <section class="welcome-section">
+            <h2>Let's Make Something Useful!</h2>
+
+            <p>
+                Explore my website and feel free to get in touch.
+            </p>
+
+            <div class="greeting-box">
+                <label for="nameInput">Try a little interaction</label>
+
+                <input
+                    type="text"
+                    id="nameInput"
+                    placeholder="Enter your name"
+                >
+
+                <button type="button" onclick="sayHello()">
+                    Say Hello
+                </button>
+
+                <p id="message" aria-live="polite"></p>
+            </div>
+        </section>
+
+        
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 Gautam | Developer Portfolio</p>
+    </footer>
+
+    <script>
+        function sayHello() {
+            const name = document.getElementById("nameInput").value.trim();
+            const message = document.getElementById("message");
+
+            if (name === "") {
+                message.innerText = "Please enter your name first.";
+                return;
+            }
+
+            message.innerText = "Hello, " + name + "! Welcome to my website.";
+        }
+    </script>
+
+</body>
+</html>
